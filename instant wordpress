@@ -1,0 +1,5 @@
+docker pull mysql
+docker pull wordpress
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=mySecretPw -d mysql:tag
+docker run --name wordpress --link mysql-db:mysql -p 8080:80 -d wordpress
+open web at hostname:8081
